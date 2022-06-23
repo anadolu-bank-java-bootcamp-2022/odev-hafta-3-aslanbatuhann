@@ -12,7 +12,7 @@ import com.gokhantamkoc.javabootcamp.odevhafta3.service.ChartService;
 
 @SpringBootApplication
 public class DrawGraphicApplication implements CommandLineRunner {
-	
+
 	public static void main(String[] args) {
 		SpringApplication.run(DrawGraphicApplication.class, args);
 	}
@@ -22,9 +22,8 @@ public class DrawGraphicApplication implements CommandLineRunner {
 		ChartService chartService = new ChartService(
 			new CryptoDataCSVRepository()
 		);
-		ChartUtilities.saveChartAsPNG(
-				new File("result.png"), 
-				chartService.createChartFromCryptoData().getCandleStickChart(), 
+		ChartUtilities.saveChartAsPNG(new File("result.png"),
+				chartService.createChartFromCryptoData().getCandleStickChart(),
 				1000, 1000);
 	}
 }
