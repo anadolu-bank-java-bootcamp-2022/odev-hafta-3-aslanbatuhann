@@ -17,7 +17,7 @@ public class CryptoDataCSVRepository implements CSVRepository {
         // Bu alandan itibaren kodunuzu yazabilirsiniz
 
 
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+        try (BufferedReader br = new BufferedReader((new InputStreamReader(inputStream)))) {
 
             String line;
             br.readLine();// this will read the first line
